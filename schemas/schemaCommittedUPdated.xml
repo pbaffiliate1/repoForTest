@@ -4,7 +4,7 @@
 			<read>creator</read>
 			<write>nobody</write>
 			<fields>
-				<field>white</field>
+				<field>black</field>
 			</fields>
 		</aclGroup>
 		<defaultAcl>
@@ -18,6 +18,6 @@
 		</schemaAcl>
 	</aclGroups>
 	<fields>
-		<field name="white" type="string" />
+		<field name="black" type="string" />
 	</fields>
 </schema>
