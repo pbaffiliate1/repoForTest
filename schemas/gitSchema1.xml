@@ -1,28 +1,10 @@
 <schema>
 	<aclGroups>
-		<aclGroup name="required">
-			<read>nobody</read>
-			<write>nobody</write>
-			<fields>
-				<field>isSuspended</field>
-			</fields>
-		</aclGroup>
 		<aclGroup name="requiredVisibles">
 			<read>creator</read>
 			<write>nobody</write>
 			<fields>
-				<field>id</field>
-				<field>groups</field>
-				<field>token</field>
-			</fields>
-		</aclGroup>
-		<aclGroup name="requiredEditables">
-			<read>creator</read>
-			<write>creator</write>
-			<fields>
-				<field>name</field>
-				<field>password</field>
-				<field>locale</field>
+				<field>black</field>
 			</fields>
 		</aclGroup>
 		<defaultAcl>
@@ -36,12 +18,6 @@
 		</schemaAcl>
 	</aclGroups>
 	<fields>
-		<field name="id" type="string" />
-		<field name="name" type="string" />
-		<field name="groups" type="string" />
-		<field name="password" type="string" />
-		<field name="locale" type="string" />
-		<field name="isSuspended" type="string" />
-		<field name="token" type="string" />
+		<field name="black" type="string" />
 	</fields>
 </schema>
