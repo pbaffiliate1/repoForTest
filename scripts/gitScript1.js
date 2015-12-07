@@ -5,7 +5,9 @@ execute=all
   **/ 
  
 	
-         
-return "hayya";
 
+         var black;
+         black="black";
+         return black;
+         
 
