@@ -1,0 +1,9 @@
+	
+         
+return "i shall not be deleted";
+/** Script ACLs do not delete 
+read=nobody 
+write=nobody
+execute=authenticated 
+ **/ 
+
