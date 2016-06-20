@@ -4,6 +4,6 @@
       "read":"nobody",
       "write":"nobody"
    },
-   "contentType":"application/script",
+   "contentType":"application/vnd.scriptr-javascript",
    "content":"return 'Hello world';"
 }
