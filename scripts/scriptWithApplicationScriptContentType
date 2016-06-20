@@ -1,9 +1,9 @@
 {  
-   "ACL":{  
-      "execute":"nobody",
-      "read":"nobody",
-      "write":"nobody"
+   'ACL':{  
+      'execute':'nobody',
+      'read':'nobody',
+      'write':'nobody'
    },
-   "contentType":"application/json",
-   "content":"return 'Hello world';"
+   'contentType':'application/json',
+   'content':'return "Hello world";'
 }
