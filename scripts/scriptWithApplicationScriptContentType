@@ -1,1 +1,9 @@
-{ "ACL":{ "execute":"nobody", "read":"nobody", "write":"nobody" }, "contentType":"application\/script", "content":"return 'Hello world';"}
+{  
+   "ACL":{  
+      "execute":"nobody",
+      "read":"nobody",
+      "write":"nobody"
+   },
+   "contentType":"application/script",
+   "content":"return 'Hello world';"
+}
