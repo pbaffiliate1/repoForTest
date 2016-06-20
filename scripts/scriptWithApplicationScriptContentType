@@ -1,9 +1,1 @@
-{  
-   'ACL':{  
-      'execute':'nobody',
-      'read':'nobody',
-      'write':'nobody'
-   },
-   'contentType':'application/json',
-   'content':'return "Hello world";'
-}
+return "Bassem";
