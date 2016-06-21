@@ -1,0 +1,19 @@
+<script>
+<scriptACL>
+<execute>all</execute>
+<read>all</read>
+<write>authenticated</write>
+</scriptACL>
+<code> 
+<![CDATA[	
+         
+return "i shall not be deleted";
+/** Script ACLs do not delete 
+read=nobody 
+write=nobody
+execute=authenticated 
+ **/ 
+
+]]>
+</code>
+</script>
