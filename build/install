@@ -1,0 +1,15 @@
+ var errorArray=new Array(); 
+ var isStopOnError=request.parameters.stopOnError;
+  var wipeAccount=request.parameters.wipeAccount;
+ var wipe = require('./wipe');
+ wipeAccount=true;
+ if( typeof isStopOnError == 'undefined' || isStopOnError == null || isStopOnError=='' ){
+ isStopOnError=false;
+ } 
+ if( typeof wipeAccount != 'undefined' && wipeAccount != null && wipeAccount != '' && wipeAccount==true ){
+ wipe.wipeAccount(errorArray, stopOnError);
+ } 
+ var script_1 = require("./script_1");
+ script_1.run(); 
+ errorArray = errorArray.concat(script_1.errorMessages);
+ return errorArray;
