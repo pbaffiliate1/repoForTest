@@ -1,0 +1,37 @@
+ var errorMessages=new Array();
+ var isStopOnError=false;
+ var stores = require("store");
+ var pubsub = require("pubsub");
+ var devices = require("device");
+ var util = require("./util");
+ function run(){ 
+ var parameters="";
+ var response=""; 
+parameters={"groupName":"group1"};
+util.callApi("SaveGroup", parameters, null, errorMessages, isStopOnError);
+ response =  stores.create("DefaultStore");
+util.handleResponse(response, errorMessages, isStopOnError, "stores.save");
+ response =  stores.create("Store1");
+util.handleResponse(response, errorMessages, isStopOnError, "stores.save");
+ response =  stores.create("Store2");
+util.handleResponse(response, errorMessages, isStopOnError, "stores.save");
+util.callApi("SaveConfiguration", {"apsdb.backgroundJobStore":"Store1","apsdb.defaultRepositoryName":"repoForTest","apsdb.defaultRepositoryOwner":"pbaffiliate1","apsdb.defaultRepositoryBranch":"branchForTest","apsdb.defaultRepositoryAccessToken":"9b51f48fcaf5123e22ee1043ef8249933f390eb2","apsdb.disableSchemalessDocs":"false","apsdb.optionalBindReferrer":"false","apsdb.defaultTokenExpires":"1800","apsdb.maximumTokenExpires":"86400","apsdb.defaultTokenLifeTime":"7200","apsdb.maximumTokenLifeTime":"604800","apsdb.allowForce200ResponseStatus":"true","apsdb.useDeprecatedSocialApis":"false","apsdb.accessControlAllowOrigin":"testOrigin ,https://test.scriptr.io","apsdb.facebookConsumerKey":"341726685895718","apsdb.facebookConsumerSecret":"62d55f6f76433f42c644ef2e9caf91bf","apsdb.facebookAccessToken":"EAAE2zHG5HCYBAELx3KZCGZA0ZAuRpE3A88r9GtbAF0xQ5rqxYnx8nPbLFGEW8eRT8jygznFdCj1suT6QERXYFki6BlqmAb2bYyK853n6G3RMlgKlh6TSrPdHWDJTwjDuxgOdtnzq6DRTcLLkovucLSuh348ab4ZD","apsdb.twitterConsumerKey":"AFfFJiOyUNegXZv6vYbXQ","apsdb.twitterConsumerSecret":"m3Mhm3gIaVq4Cv1Ctpe4w8KWE7ZqLbmA6OXAoLn7aY","apsdb.twitterAccessToken":"437388913-B2gHjIZ6w3RNSuWa71BDG6vk9XK8vbS30hnnJzEM","apsdb.twitterAccessTokenSecret":"Y8SxgSGrKmLcxMOqBt0xcELpq0WIz164LksLb7Gesk","apsdb.P3P":""}, null, errorMessages, isStopOnError);
+util.callApi("SaveConfiguration", {"apsdb.DefaultStore.deleteDocumentACL":"nobody","apsdb.DefaultStore.queryACL":"nobody","apsdb.DefaultStore.getFileACL":"nobody","apsdb.DefaultStore.saveDocumentACL":"nobody"}, null, errorMessages, isStopOnError);
+util.callApi("SaveConfiguration", {"apsdb.Store1.getFileACL":"authenticated","apsdb.Store1.deleteDocumentACL":"authenticated","apsdb.Store1.queryACL":"authenticated","apsdb.Store1.saveDocumentACL":"authenticated"}, null, errorMessages, isStopOnError);
+util.callApi("SaveConfiguration", {"apsdb.Store2.saveDocumentACL":"nobody","apsdb.Store2.getFileACL":"nobody","apsdb.Store2.deleteDocumentACL":"nobody","apsdb.Store2.queryACL":"nobody"}, null, errorMessages, isStopOnError);
+util.callApi("SaveConfiguration", {"apsdb.SystemStore.getFileACL":"nobody","apsdb.SystemStore.queryACL":"nobody","apsdb.SystemStore.saveDocumentACL":"nobody","apsdb.SystemStore.deleteDocumentACL":"nobody"}, null, errorMessages, isStopOnError);
+var channel2_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("channel2",channel2_options);
+util.handleResponse(response, errorMessages, isStopOnError, "pubsub.createChannel");
+var channel1_options={  "subscribeACL": "anonymous", "publishACL": "anonymous" }
+response =  pubsub.createChannel("channel1",channel1_options);
+util.handleResponse(response, errorMessages, isStopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("channel1","script1","SCRIPT");
+util.handleResponse(response, errorMessages, isStopOnError, "pubsub.subscribe");
+util.callApi("SaveUser", {"password":"user2","groups":"group1","login":"user2","name":"user2Name","email":"user2@email.com"}, null, errorMessages, isStopOnError);
+util.callApi("SaveUser", {"password":"user1","groups":"group1","login":"user1","name":"user1Name","email":"user1@email.com"}, null, errorMessages, isStopOnError);
+response = devices.save({"password":"device2","name":"device2Name","id":"device2"});
+util.handleResponse(response, errorMessages, isStopOnError, "devices.save");
+response = devices.generateToken("device2");
+util.handleResponse(response, errorMessages, isStopOnError, "devices.generateToken");
+ }
