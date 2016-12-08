@@ -1,0 +1,19 @@
+
+
+var id = request.parameters.id;
+var platform = request.parameters.platform;
+var configurationId = request.parameters.configurationId;
+var requireName = request.parameters.requireName;
+var update = request.parameters.update;
+
+var mobilePush = null;
+
+if(requireName){
+	mobilePush = require(requireName);
+};
+if(update){
+	return mobilePush.updateGroup(id, configurationId);
+}else{
+	return mobilePush.createGroup(id, platform, configurationId);
+}
+
