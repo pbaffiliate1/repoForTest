@@ -1,0 +1,14 @@
+function handleResponse( response, errorMessages, isStopOnError, action ){
+		if (response.metadata.status == "failure") {
+				var errorMessage = "Error " + response.metadata.errorDetail + " in "+ action ;
+			errorMessages.push(errorMessage);
+			apsdb.log.debug(errorMessage, null);
+			if (isStopOnError) {
+	        	throw(errorMessage);
+	      	}
+	    }
+}
+function callApi( action, parameters, credentials ,errorMessages, isStopOnError){
+	var resp=apsdb.callApi(action, parameters, null);
+	handleResponse(resp, errorMessages, isStopOnError, action);
+	return resp;}
