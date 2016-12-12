@@ -1,0 +1,16 @@
+ var stores = require("store");
+ var pubsub = require("pubsub");
+ var devices = require("device");
+ var util = require("./util");
+ function run(stopOnError, errorMessages){ 
+ var parameters="";
+ var response=""; 
+ response =  stores.create("DefaultStore");
+util.handleResponse(response, errorMessages, stopOnError, "stores.save");
+util.callApi("SaveConfiguration", {"apsdb.defaultResponseType":"JSON","apsdb.defaultScriptExecutionACL":"scriptr@FE9FC59468","apsdb.defaultReadACL":"scriptr","apsdb.disableSchemalessDocs":"true","apsdb.optionalBindReferrer":"false","apsdb.defaultTokenExpires":"1800","apsdb.maximumTokenExpires":"86400","apsdb.defaultTokenLifeTime":"7200","apsdb.maximumTokenLifeTime":"604800","apsdb.allowForce200ResponseStatus":"true","apsdb.useDeprecatedSocialApis":"false","apsdb.accessControlAllowOrigin":"https://test.scriptr.io","apsdb.P3P":""}, null, errorMessages, stopOnError);
+util.callApi("SaveConfiguration", {"apsdb.DefaultStore.deleteDocumentACL":"nobody","apsdb.DefaultStore.getFileACL":"nobody","apsdb.DefaultStore.saveDocumentACL":"nobody","apsdb.DefaultStore.queryACL":"nobody"}, null, errorMessages, stopOnError);
+response = devices.save({"password":"scriptr","isSuspended":"false","name":"My Device","id":"scriptr"});
+util.handleResponse(response, errorMessages, stopOnError, "devices.save");
+response = devices.generateToken("scriptr");
+util.handleResponse(response, errorMessages, stopOnError, "devices.generateToken");
+ }
