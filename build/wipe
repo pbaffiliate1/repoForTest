@@ -24,15 +24,20 @@
 	for (i = 0; i < listChannels.result.channels.length; i++) {
   	  var deleteChannel = util.callApi("DeleteChannel", {"name": listChannels.result.channels[i].name}, null, null, errorMessages, stopOnError);
 	}
-	//Delete all documents in SystemStore
+	//Delete all scheduling documents in DefaultStore
 	var documents = require("document");
-	var store = documents.getInstance("SystemStore");
-	var listDocuments = store.query({"query" : "key is not null", "fields" : "*"});
+	var store = documents.getInstance("DefaultStore");
+	var listDocuments = store.query({"query" : "apsST_scriptName is not null", "fields" : "*"});
+	for(i=0; i<listDocuments.result.documents.length; i++)
+	    store.delete(listDocuments.result.documents[i].key);
+	//Delete all documents in SystemStore
+	store = documents.getInstance("SystemStore");
+	listDocuments = store.query({"query" : "key is not null", "fields" : "*"});
 	for(i=0; i<listDocuments.result.documents.length; i++)
 	    store.delete(listDocuments.result.documents[i].key);
 //Delete local storage in SystemStore.
 	for (var l in storage.local) {
-	    delete storage.local[l];
+	    	delete storage.local[l];
 	}
 //Delete global storage in SystemStore.
 	for (var g in storage.global) {

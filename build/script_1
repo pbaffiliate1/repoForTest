@@ -109,14 +109,115 @@ util.callApi("SaveGroup", parameters, null, errorMessages, stopOnError);
 util.handleResponse(response, errorMessages, stopOnError, "stores.save");
 util.callApi("SaveConfiguration", {"apsdb.defaultResponseType":"JSON","apsdb.defaultRepositoryName":"repoForTest","apsdb.defaultRepositoryOwner":"pbaffiliate1","apsdb.defaultRepositoryBranch":"testRyanBranch","apsdb.defaultRepositoryAccessToken":"9b51f48fcaf5123e22ee1043ef8249933f390eb2","apsdb.defaultScriptExecutionACL":"scriptr@FE9FC59468","apsdb.defaultReadACL":"scriptr","apsdb.disableSchemalessDocs":"true","apsdb.optionalBindReferrer":"false","apsdb.defaultTokenExpires":"1800","apsdb.maximumTokenExpires":"86400","apsdb.defaultTokenLifeTime":"7200","apsdb.maximumTokenLifeTime":"604800","apsdb.allowForce200ResponseStatus":"true","apsdb.useDeprecatedSocialApis":"false","apsdb.accessControlAllowOrigin":"hello,https://test.scriptr.io","apsdb.facebookConsumerKey":"Ryan Atgtiyeh","apsdb.facebookConsumerSecret":"Ryan Atgtiyeh","apsdb.facebookAccessToken":"Ryan Atgtiyeh","apsdb.twitterConsumerKey":"Ryan Atgtiyeh","apsdb.twitterConsumerSecret":"Ryan Atgtiyeh","apsdb.twitterAccessToken":"Ryan Atgtiyeh","apsdb.twitterAccessTokenSecret":"Ryan Atgtiyeh","apsdb.P3P":""}, null, errorMessages, stopOnError);
 util.callApi("SaveConfiguration", {"apsdb.DefaultStore.deleteDocumentACL":"nobody","apsdb.DefaultStore.getFileACL":"nobody","apsdb.DefaultStore.saveDocumentACL":"nobody","apsdb.DefaultStore.queryACL":"nobody"}, null, errorMessages, stopOnError);
-var test_channel_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
-response =  pubsub.createChannel("test_channel",test_channel_options);
+var channel_5_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("5",channel_5_options);
 util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
-response =  pubsub.subscribe("test_channel","folder1/folder2/folder3/folder4/hello","SCRIPT");
+response =  pubsub.subscribe("5","folder1/folder2/folder3/folder4/hello","SCRIPT");
 util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
-response =  pubsub.subscribe("test_channel","notif1","push_group");
+var channel_6_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("6",channel_6_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("6","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_7_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("7",channel_7_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("7","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_9_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("9",channel_9_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("9","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_10_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("10",channel_10_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("10","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_11_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("11",channel_11_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("11","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_12_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("12",channel_12_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("12","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_13_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("13",channel_13_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("13","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_14_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("14",channel_14_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("14","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_15_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("15",channel_15_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("15","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_16_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("16",channel_16_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("16","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_19_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("19",channel_19_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("19","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_17_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("17",channel_17_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("17","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_18_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("18",channel_18_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("18","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_20_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("20",channel_20_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("20","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_4_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("4",channel_4_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("4","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_3_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("3",channel_3_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("3","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_2_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("2",channel_2_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("2","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_1_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("1",channel_1_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("1","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+var channel_8_options={  "subscribeACL": "authenticated", "publishACL": "authenticated" }
+response =  pubsub.createChannel("8",channel_8_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("8","folder1/folder2/folder3/folder4/hello","SCRIPT");
 util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
 response =  schedule("folder1/folder2/folder3/folder4/hello","0 1,4 0 ? * 1");
+util.handleResponse(response, errorMessages, stopOnError, "schedule");
+response =  schedule("folder1/folder2/folder3/folder4/hello","0 * 2 * * ?");
+util.handleResponse(response, errorMessages, stopOnError, "schedule");
+response =  schedule("folder1/folder2/folder3/folder4/hello","0 * 9 * * ?");
+util.handleResponse(response, errorMessages, stopOnError, "schedule");
+response =  schedule("folder1/folder2/folder3/folder4/hello","0 * 17 * * ?");
+util.handleResponse(response, errorMessages, stopOnError, "schedule");
+response =  schedule("folder1/folder2/folder3/folder4/hello","0 * 23 * * ?");
 util.handleResponse(response, errorMessages, stopOnError, "schedule");
 response = devices.save({"password":"49","isSuspended":"true","groups":"1","name":"49","id":"49"});
 util.handleResponse(response, errorMessages, stopOnError, "devices.save");
