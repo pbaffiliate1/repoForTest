@@ -122,7 +122,7 @@ response = devices.save({"password":"scriptr","isSuspended":"false","name":"My D
 util.handleResponse(response, errorMessages, stopOnError, "devices.save");
 response = devices.generateToken("scriptr");
 util.handleResponse(response, errorMessages, stopOnError, "devices.generateToken");
-response = devices.save({"password":"newdevice","isSuspended":"true","description":"test50","name":"newdevice","id":"newdevice"});
+response = devices.save({"password":"newdevice","isSuspended":"false","description":"test50","name":"newdevice","id":"newdevice"});
 util.handleResponse(response, errorMessages, stopOnError, "devices.save");
 response = devices.generateToken("newdevice");
 util.handleResponse(response, errorMessages, stopOnError, "devices.generateToken");
