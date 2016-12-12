@@ -5,10 +5,25 @@
  function run(stopOnError, errorMessages){ 
  var parameters="";
  var response=""; 
+parameters={"groupName":"test_group1"};
+util.callApi("SaveGroup", parameters, null, errorMessages, stopOnError);
  response =  stores.create("DefaultStore");
 util.handleResponse(response, errorMessages, stopOnError, "stores.save");
-util.callApi("SaveConfiguration", {"apsdb.defaultResponseType":"JSON","apsdb.defaultScriptExecutionACL":"scriptr@FE9FC59468","apsdb.defaultReadACL":"scriptr","apsdb.disableSchemalessDocs":"true","apsdb.optionalBindReferrer":"false","apsdb.defaultTokenExpires":"1800","apsdb.maximumTokenExpires":"86400","apsdb.defaultTokenLifeTime":"7200","apsdb.maximumTokenLifeTime":"604800","apsdb.allowForce200ResponseStatus":"true","apsdb.useDeprecatedSocialApis":"false","apsdb.accessControlAllowOrigin":"https://test.scriptr.io","apsdb.P3P":""}, null, errorMessages, stopOnError);
+util.callApi("SaveConfiguration", {"apsdb.defaultResponseType":"JSON","apsdb.defaultRepositoryName":"repoForTest","apsdb.defaultRepositoryOwner":"pbaffiliate1","apsdb.defaultRepositoryBranch":"testRyanBranch","apsdb.defaultRepositoryAccessToken":"9b51f48fcaf5123e22ee1043ef8249933f390eb2","apsdb.defaultScriptExecutionACL":"scriptr@FE9FC59468","apsdb.defaultReadACL":"scriptr","apsdb.disableSchemalessDocs":"true","apsdb.optionalBindReferrer":"false","apsdb.defaultTokenExpires":"1800","apsdb.maximumTokenExpires":"86400","apsdb.defaultTokenLifeTime":"7200","apsdb.maximumTokenLifeTime":"604800","apsdb.allowForce200ResponseStatus":"true","apsdb.useDeprecatedSocialApis":"false","apsdb.accessControlAllowOrigin":"hello,https://test.scriptr.io","apsdb.facebookConsumerKey":"Ryan Atgtiyeh","apsdb.facebookConsumerSecret":"Ryan Atgtiyeh","apsdb.facebookAccessToken":"Ryan Atgtiyeh","apsdb.twitterConsumerKey":"Ryan Atgtiyeh","apsdb.twitterConsumerSecret":"Ryan Atgtiyeh","apsdb.twitterAccessToken":"Ryan Atgtiyeh","apsdb.twitterAccessTokenSecret":"Ryan Atgtiyeh","apsdb.P3P":""}, null, errorMessages, stopOnError);
 util.callApi("SaveConfiguration", {"apsdb.DefaultStore.deleteDocumentACL":"nobody","apsdb.DefaultStore.getFileACL":"nobody","apsdb.DefaultStore.saveDocumentACL":"nobody","apsdb.DefaultStore.queryACL":"nobody"}, null, errorMessages, stopOnError);
+var test_channel_options={  "subscribeACL": "anonymous", "publishACL": "anonymous" }
+response =  pubsub.createChannel("test_channel",test_channel_options);
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.createChannel");
+response =  pubsub.subscribe("test_channel","folder1/folder2/folder3/folder4/hello","SCRIPT");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+response =  pubsub.subscribe("test_channel","notif1","push_group");
+util.handleResponse(response, errorMessages, stopOnError, "pubsub.subscribe");
+response =  schedule("folder1/folder2/folder3/folder4/hello","0 * * * * ?");
+util.handleResponse(response, errorMessages, stopOnError, "schedule");
+response = devices.save({"password":"newdevice","description":" test56","groups":"test_group1","name":"newdevice","id":"newdevice"});
+util.handleResponse(response, errorMessages, stopOnError, "devices.save");
+response = devices.generateToken("newdevice");
+util.handleResponse(response, errorMessages, stopOnError, "devices.generateToken");
 response = devices.save({"password":"scriptr","isSuspended":"false","name":"My Device","id":"scriptr"});
 util.handleResponse(response, errorMessages, stopOnError, "devices.save");
 response = devices.generateToken("scriptr");
