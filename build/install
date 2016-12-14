@@ -3,19 +3,34 @@
   var wipeAccount=request.parameters.wipeAccount;
  var wipe = require('./wipe');
  if( !request.parameters.stopOnError ){
- stopOnError=false;
+	 stopOnError=true;
  }
  else 
  { 
- if( stopOnError != "true" && stopOnError!="false" ){
- var error = {"metadata":{"requestId": request.id,
+ 	 if( stopOnError != "true" && stopOnError!="false" ){
+	 var error = {"metadata":{"requestId": request.id,
 		"status": "failure",
 		"errorCode": "INVALID_PARAMETER_VALUE",
 		"errorDetail": "Parameter [stopOnError] can either be 'true' or 'false'.",
 		"statusCode": "400"}};
- return error; 
+ 	 return error; 
 } } 
- if( request.parameters.wipeAccount && wipeAccount=='true' ){
+
+ if( !request.parameters.wipeAccount ){
+	 wipeAccount=true;
+ }
+ else 
+ { 
+ 	 if( wipeAccount != "true" && wipeAccount!="false" ){
+	 var error = {"metadata":{"requestId": request.id,
+		"status": "failure",
+		"errorCode": "INVALID_PARAMETER_VALUE",
+		"errorDetail": "Parameter [wipeAccount] can either be 'true' or 'false'.",
+		"statusCode": "400"}};
+ 	 return error; 
+} } 
+
+ if( wipeAccount=='true' || wipeAccount == true ){
  wipe.wipeAccount(errorArray, stopOnError);
  }
  else 
