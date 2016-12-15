@@ -1,3 +1,4 @@
+ var scriptName='install';
  var errorArray=new Array(); 
  var stopOnError=request.parameters.stopOnError;
   var wipeAccount=request.parameters.wipeAccount;

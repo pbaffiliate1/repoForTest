@@ -1,28 +1,29 @@
+ var scriptName='wipe';
  var util = require("./util");
   function wipeAccount(errorMessages, stopOnError){
 	var i = 0;
-	var listStores = util.callApi("ListStores", {}, null, errorMessages, stopOnError);
+	var listStores = util.callApi("ListStores", {}, null, errorMessages, stopOnError, scriptName, "");
 	for (i = 0; i < listStores.result.stores.length; i++) {
 	    if (listStores.result.stores[i].name != "DefaultStore") {
-	        var deleteStore = util.callApi("DeleteStore", {"apsdb.store": listStores.result.stores[i].name}, null, errorMessages, stopOnError);
+	        var deleteStore = util.callApi("DeleteStore", {"apsdb.store": listStores.result.stores[i].name}, null, errorMessages, stopOnError, scriptName, listStores.result.stores[i].name);
 	    }
 	}
-	var listGroups = util.callApi("ListGroups", {}, null, errorMessages, stopOnError);
+	var listGroups = util.callApi("ListGroups", {}, null, errorMessages, stopOnError, scriptName, "");
 	for (i = 0; i < listGroups.result.groups.length; i++) {
-	    var deleteGroup = util.callApi("DeleteGroup", {"groupName": listGroups.result.groups[i].name}, null, null, errorMessages, stopOnError);
+	    var deleteGroup = util.callApi("DeleteGroup", {"groupName": listGroups.result.groups[i].name}, null, null, errorMessages, stopOnError, scriptName, listGroups.result.groups[i].name);
 	}
-	var listUsers = util.callApi("ListUsers", {}, null, errorMessages, stopOnError);
+	var listUsers = util.callApi("ListUsers", {}, null, errorMessages, stopOnError, scriptName, "");
 	for (i = 0; i < listUsers.result.users.length; i++) {
- 	   var deleteUser = util.callApi("DeleteUser", {"login": listUsers.result.users[i].login}, null, null, errorMessages, stopOnError);
+ 	   var deleteUser = util.callApi("DeleteUser", {"login": listUsers.result.users[i].login}, null, null, errorMessages, stopOnError, scriptName, listUsers.result.users[i].login);
 	}
-	var listDevices = util.callApi("ListDevices", {}, null, errorMessages, stopOnError);
+	var listDevices = util.callApi("ListDevices", {}, null, errorMessages, stopOnError, scriptName,"");
 	for (i = 0; i < listDevices.result.devices.length; i++) {
  	   if(listDevices.result.devices[i].id != "scriptr"){
-			var deleteDevice = util.callApi("DeleteDevice", {"id": listDevices.result.devices[i].id}, null, null, errorMessages, stopOnError);
+			var deleteDevice = util.callApi("DeleteDevice", {"id": listDevices.result.devices[i].id}, null, null, errorMessages, stopOnError, scriptName, listDevices.result.devices[i].id);
 		}	}
-	var listChannels = util.callApi("ListChannels", {}, null, errorMessages, stopOnError);
+	var listChannels = util.callApi("ListChannels", {}, null, errorMessages, stopOnError, scriptName, "");
 	for (i = 0; i < listChannels.result.channels.length; i++) {
-  	  var deleteChannel = util.callApi("DeleteChannel", {"name": listChannels.result.channels[i].name}, null, null, errorMessages, stopOnError);
+  	  var deleteChannel = util.callApi("DeleteChannel", {"name": listChannels.result.channels[i].name}, null, null, errorMessages, stopOnError, scriptName, listChannels.result.channels[i].name);
 	}
 	//Delete all scheduling documents in DefaultStore
 	var documents = require("document");
@@ -71,5 +72,5 @@
   	     "apsdb.useOldScriptPermissions": "",
   	     "apsdb.accessControlAllowOrigin": "",
   	     "apsdb.accessControlAllowHeaders": ""
-	   }, null, null, errorMessages, stopOnError);
+	   }, null, null, errorMessages, stopOnError, scriptName, "");
 }
