@@ -2,8 +2,7 @@ function handleResponse( response, errorMessages, stopOnError, action ){
 		if (response.metadata.status == "failure") {
 				var errorMessage = "Error " + response.metadata.errorDetail + " in "+ action ;
 			errorMessages.push(errorMessage);
-			apsdb.log.debug(errorMessage, null);
-			if (stopOnError) {
+			if (stopOnError=="true" || stopOnError==true) {
 	        	throw(errorMessage);
 	      	}
 	    }
