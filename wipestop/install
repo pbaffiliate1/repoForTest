@@ -17,7 +17,7 @@
 } } 
 
  if( !request.parameters.wipeAccount ){
-	 wipeAccount=false;
+	 wipeAccount=true;
  }
  else 
  { 
