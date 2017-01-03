@@ -28,7 +28,7 @@
 	//Delete all scheduling documents in DefaultStore
 	var documents = require("document");
 	var store = documents.getInstance("DefaultStore");
-	var listDocuments = store.query({"query" : "apsST_scriptName is not null", "fields" : "*"});
+	var listDocuments = store.query({"query" : "key is not null", "fields" : "*"});
 	for(i=0; i<listDocuments.result.documents.length; i++)
 	    store.delete(listDocuments.result.documents[i].key);
 	//Delete all documents in SystemStore
@@ -50,11 +50,11 @@
    	 "apsdb.sendEmailACL": "",
 		 "apsdb.listScriptsACL": "",
   	     "apsdb.getScriptACL": "",
-  	     "apsdb.defaultScriptExecutionACL": "",
+  	     "apsdb.defaultScriptExecutionACL": "scriptr",
    	 "apsdb.storageStore": "",
     	 "apsdb.defaultNotificationStore": "",
   	     "apsdb.defaultResponseType": "",
-    	 "apsdb.disableSchemalessDocs": "true",
+    	 "apsdb.disableSchemalessDocs": "false",
     	 "apsdb.optionalBindReferrer": "false",
    	 "apsdb.allowForce200ResponseStatus": "true",
     	 "apsdb.defaultTokenExpires": "1800",
@@ -67,10 +67,5 @@
    	 "apsdb.defaultRepositoryBranch": "",
   	     "apsdb.defaultRepositoryPath": "",
   	     "apsdb.backgroundJobStore": "",
-   	 "apsdb.gitPurge": "",
-   	 "apsdb.P3P": "",
-  	     "apsdb.useOldScriptPermissions": "",
-  	     "apsdb.accessControlAllowOrigin": "",
-  	     "apsdb.accessControlAllowHeaders": ""
-	   }, null, null, errorMessages, stopOnError, scriptName, "");
+   	 "apsdb.gitPurge": ""	   }, null, null, errorMessages, stopOnError, scriptName, "");
 }

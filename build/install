@@ -46,4 +46,7 @@
 } } 
  var script_1 = require("./script_1");
  script_1.run(stopOnError, errorArray); 
-  return errorArray;
+  if(errorArray.length==0){
+	  return "Your account settings are imported successfully.";
+	}
+ return errorArray;
