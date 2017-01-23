@@ -1,1 +1,0 @@
-var documents = require("document"); return documents.save({"key":"frOH3P"});
