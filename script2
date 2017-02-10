@@ -1,0 +1,11 @@
+var key = "111111";
+
+var documents = require("document");
+
+var params = {
+		"key": key,
+	};
+
+var result = documents.create(params);
+
+return result;
