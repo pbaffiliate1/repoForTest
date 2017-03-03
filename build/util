@@ -5,8 +5,7 @@ function handleResponse( response, errorMessages, stopOnError, action, scriptNam
 		   		 response.metadata.errorDetail+="."; 
 			} 
 			var errorMessage = scriptName + " threw an exception at " + action + " ["+id+"]. " + response.metadata.errorCode +": "+ response.metadata.errorDetail; 
-			if(errorMessages == null) errorMessages = []; 
- 			errorMessages.push(errorMessage);
+			errorMessages.push(errorMessage);
 			if (stopOnError=="true" || stopOnError==true) {
 	        	throw(errorMessage);
 	      	}
