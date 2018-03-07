@@ -4,7 +4,7 @@
   var wipeAccount=request.parameters.wipeAccount;
  var wipe = require('./wipe');
  if( !request.parameters.stopOnError ){
-	 stopOnError=false;
+	 stopOnError=true;
  }
  else 
  { 
@@ -18,7 +18,7 @@
 } } 
 
  if( !request.parameters.wipeAccount ){
-	 wipeAccount=false;
+	 wipeAccount=true;
  }
  else 
  { 
