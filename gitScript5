@@ -1,11 +1,5 @@
-<script>
-<scriptACL>
-<execute>all</execute>
-<read>all</read>
-<write>all</write>
-</scriptACL>
-<code> 
-<![CDATA[	
+ 
+	
 systemLogger.setLevel("off");
 /**
 The code below will:
@@ -20,8 +14,6 @@ and it will do nothing
 	  }
 
 	  //This is the last comment
-return "test the commented out content2";
+return "testing the commented out content2";
 
-]]>
-</code>
-</script>
+
