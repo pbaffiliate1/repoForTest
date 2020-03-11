@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- Title -->
+<title>HTML Markup Examples - A Simple Guide to HTML</title>
+<!-- Meta tags -->
+<meta charset="utf-8" />
+<meta name="description" content="HTML Markup Examples - Basic samples of commonly used HTML tags, and how they appear on a web page." />
+<meta name="keywords" content="html, guide, simple, beginner, list, reference, lookup, htm, HTML, tags, examples, tutorial, concise, web, design, easy, form, table, image, frame, CSS, style, stylesheet, summary, cheatsheet, cheat, sheet, colour" />
+<meta name="resource-type" content="document" />
+<meta name="author" content="Robert Duncan, rhduncan@hotmail.com" />
+<meta name="copyright" content="(c) Robert Duncan" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- meta http-equiv="last-modified" content="26 Mar 2017, 02:26:25" -->
+<!-- Meta links -->
+<link rel="start" href="http://www.simplehtmlguide.com/" title="A Simple Guide to HTML" />
+<link rel="stylesheet" type="text/css" href="style-common-nano.css" />
+<link rel="stylesheet" type="text/css" media="(min-width: 971px)" href="style-prp.css" title="dark" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="favicon.ico" />
+<script type="text/javascript">
+<![CDATA[
+document.write(">");
+]]
