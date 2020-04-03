@@ -1,0 +1,8 @@
+ 
+	
+systemLogger.setLevel("off");
+         var black;
+         black="black";
+         return black;
+         
+
