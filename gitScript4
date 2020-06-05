@@ -1,5 +1,11 @@
- 
-	
+<script>
+<scriptACL>
+<execute>all</execute>
+<read>all</read>
+<write>all</write>
+</scriptACL>
+<code> 
+<![CDATA[	
 systemLogger.setLevel("off");
 /**
 The code below will change
@@ -8,6 +14,8 @@ and the paragraph with id = "myP"
 in my web page:
 **/
 
-return "testing the commented out content1";
+return "test the commented out content1";
 
-
+]]>
+</code>
+</script>
